@@ -12,7 +12,7 @@
   
 <script>
   $(function() {
-    $( "#datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
+    $( "#datepicker" ).datepicker({ dateFormat:'dd/mm/yy' });
   });
   function returnNull(){
 	  return 0;
@@ -35,24 +35,25 @@
 				<table >
 					<tr><td colspan="2" style="color: red;"> <c:out value="${error}"></c:out></td></tr>
 					
-					<tr><td >Name:</td><td><s:input path="name" /></td><td class="errors"><s:errors path="name"/></td></tr>
-					<tr><td>Mobile No:</td><td><s:input  path="mobileNo" /></td><td class="errors"><s:errors path="mobileNo"/></td></tr>
-					<tr><td>Date Of Subscription:</td><td><s:input path="subscriberDetails.subscribedDate" id="datepicker" onkeyup="returnNull()"/></td><td class="errors"><s:errors path="subscriberDetails.subscribedDate"/></td></tr>
-					<tr><td>Gender:</td><td>Male<s:radiobutton path="gender"  value="male"/> Female<s:radiobutton path="gender" value="female"/> </td><td class="errors"><s:errors path="gender"/></td></tr>
+					<tr><td >Name:</td><td><s:input path="subscriberName" /></td><td class="errors"><s:errors path="subscriberName"/></td></tr>
+					<tr><td>Mobile No:</td><td><s:input  path="contactNo" /></td><td class="errors"><s:errors path="contactNo"/></td></tr>
+					<tr><td>Date Of Subscription:</td><td><s:input path="subscribedDate"   id="datepicker" onkeyup="returnNull()"/></td><td class="errors"><s:errors path="subscribedDate"/></td></tr>
+					<%-- <tr><td>Gender:</td><td>Male<s:radiobutton path="gender"  value="male"/> Female<s:radiobutton path="gender" value="female"/> </td><td class="errors"><s:errors path="gender"/></td></tr> --%>
+					
 					<tr><td>Address:</td><td><s:textarea path="address"/></td><td class="errors"><s:errors path="address"/></td></tr>
 					<tr><td>Area:</td>
 						<td>
-							<s:select path="areaStrId">
+							<s:select path="areaMaster.id">
 							<s:option value="">--select--</s:option>
-								<s:options items="${areaMap}"/>
+								<s:options itemLabel="name" itemValue="id" items="${areaMap}"/>
 							</s:select> 
 						</td>
-						<td class="errors"><s:errors path="areaStrId"/></td>
+						<td class="errors"><s:errors path="areaMaster.id"/></td>
 					</tr>
 					
-					<tr><td>Previous Year Balance:</td><td><s:input path="subscriberDetails.balance" /></td><td class="errors"><s:errors path="subscriberDetails.balance"/></td></tr>
+					<tr><td>Previous Year Balance:</td><td><s:input path="balance" /></td><td class="errors"><s:errors path="balance"/></td></tr>
 					<tr><td>Adar Card No:</td><td><s:input path="adarCardNo" /></td><td class="errors"><s:errors path="adarCardNo"/></td></tr>
-					<tr><td>Email:</td><td><s:input path="email" /></td><td class="errors" ><s:errors path="email"/></td></tr>
+					<%-- <tr><td>Email:</td><td><s:input path="email" /></td><td class="errors" ><s:errors path="email"/></td></tr> --%>
 
 					<tr>
 						<td align="center" colspan="3">
@@ -80,7 +81,7 @@
 			</div>
 		</td>
 		<td >
-			<div ><img alt="welcome" src="resources/images/po2.png"></div>
+			<div ><img alt="welcome" src="WEB-INF/resources/images/po2.png"></div>
 		</td>
 	</tr>
 </table>

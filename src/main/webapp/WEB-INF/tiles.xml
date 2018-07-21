@@ -76,4 +76,8 @@
     </definition>
      <definition name="printYearReport" template="/WEB-INF/jsp/admin/generateYearReport.jsp" >  
     </definition>
+    <definition name="uploadSubscriberPage" extends="base.definition">  
+        <put-attribute name="title" value="Upload file" /> 
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/uploadSubscriberPage.jsp" />  
+    </definition>
 </tiles-definitions>

@@ -19,7 +19,7 @@
 		</c:if>
 
 		<form name='loginForm'
-			action="<c:url value='/j_spring_security_check' />" method='POST'>
+			action="loginCheck">
 			<div style="padding-left: 80px"" align="center"><h3 >Login</h3> </div>
 			<table align="center" cellpadding="10px">
 				<tr>

@@ -21,6 +21,7 @@
             <ul>
                <li><a href='<c:url value="/admin/userInfo" />'>List all subscribers</a></li>
                 <li><a href='<c:url value="/admin/addSubscriber" />'>Add new subscriber</a></li>
+                <li><a href='<c:url value="/admin/uploadSubscriberPage" />'>Upload subscriber data</a></li>
                 <li><a href='<c:url value="/admin/paymentYearDetails" />'>View Balance Year wise</a></li>
             </ul>
          </li>
@@ -44,14 +45,14 @@
    <li><a href='#'>Contact</a></li>
   
 	<c:if test="${sessionScope.SPRING_SECURITY_CONTEXT==null }">
-		<li><a href='<c:url value="/register" />'>Register</a></li>
+		
         <li><a href='<c:url value="/login" />'>Login</a></li>
          
     </c:if>
- 	 <c:if test="${sessionScope.SPRING_SECURITY_CONTEXT!=null }">
+ 	 <%-- <c:if test="${sessionScope.SPRING_SECURITY_CONTEXT!=null }">
  	 <li> <a href='<c:url value="/editProfile"/>'> Edit Profile</a></li>
          <li> <a href='<c:url value="/logout" />'><sec:authentication property="principal.username"/> Logout</a></li>
-    </c:if>
+    </c:if> --%>
 </ul>
 </div>
 </body>

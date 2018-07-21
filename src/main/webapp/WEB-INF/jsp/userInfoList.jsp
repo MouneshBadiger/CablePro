@@ -15,7 +15,7 @@
 <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
 function goBack(){
-	window.location.href = "/SpringMavenFinal/home"
+	window.location.href = "/SmartCable/home"
 }
 function deleteEntry(id){
 	if(confirm("Are you sure to delete the record")){
@@ -43,16 +43,16 @@ function generateBalanceReport(){
 		<table  id="myTable"  border="1" style="border-collapse: collapse;" cellspacing="10px" cellpadding="10px">
 		<thead>
 			<tr style="background-color:#C8C8C8;font-weight: bold;">
-					<th width="5%" >No</th>
-					<th width="15%" >Name</th>
+					<th  >No</th>
+					<th >Name</th>
 					<!-- <th width="10%"> Email</th> -->
-					<th width="10%">Mobile no</th>
-					<th width="10%">Address</th>
-					<th width="10%">Sub Date</th>
-					<th width="10%">Balance</th>
-					<th width="10%">Payment</th>
-					<th width="10%">Edit</th>
-					<th width="10%">Delete</th>
+					<th >Mobile no</th>
+					<th >Address</th>
+					<th>Sub Date</th>
+					<th >Balance</th>
+					<th>Payment</th>
+					<th>Edit</th>
+					<th>Delete</th>
 				</tr>
 			</thead>
 			 <tbody>
@@ -60,12 +60,13 @@ function generateBalanceReport(){
 			
 				<tr>
 					<td><c:out value="${st.index+1}"/></td>
-					<td><c:out value="${i.name}"/></td>
+					<td><c:out value="${i.subscriberName}"/></td>
 					<%-- <td><c:out value="${i.email}"/></td> --%>
-					<td><c:out value="${i.mobileNo}"/></td>
+					<td><c:out value="${i.contactNo}"/></td>
 					<td><c:out value="${i.address}"/></td>
-					<td><fmt:formatDate type="date" value="${i.subscriberDetails.subscribedDate}" pattern="dd/MM/yyyy" /></td>
-					<td align="center"><c:out value="${i.pendingAmount}"/></td>
+					<fmt:formatDate value="${i.subscribedDate}" var="formattedDate" type="date" pattern="dd-MM-yyyy" />
+					<td><c:out value="${formattedDate}"/></td>
+					<td align="center"><c:out value="${i.balance}"/></td>
 					<td align="center"><img alt="make payment" onclick="makePayment(<c:out value="${i.id}"/>)" src="<c:url value="/resources/images/makePayment.png"/>" height="20px" width="20px"></td>
 					<td align="center"><a href="openEditSubscriber?userId=<c:out value="${i.id}"/>"><img  alt="edit" src="<c:url value="/resources/images/edit.png"/>" height="20px" width="20px"> </a></td>
 					<td align="center"><img alt="delete" onclick="deleteEntry(<c:out value="${i.id}"/>)" src="<c:url value="/resources/images/delete.png"/>" height="20px" width="20px"></td>

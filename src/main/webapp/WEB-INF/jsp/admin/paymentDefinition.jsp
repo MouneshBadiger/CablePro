@@ -13,20 +13,20 @@
 <title>Payment</title>
 <script type="text/javascript">
 function goBack(){
-	window.location.href = "/SpringMavenFinal/home"
+	window.location.href = "/SmartCable/home"
 }
 function deleteEntry(id){
 	if(confirm("Are you sure to delete the record")){
-		window.location.href = "/SpringMavenFinal/admin/paymentDef/delete?boId="+id;
+		window.location.href = "/SmartCable/admin/paymentDef/delete?boId="+id;
 	}
 }
 function editEntry(id){
-		window.location.href = "/SpringMavenFinal/admin/paymentDef/edit?boId="+id;
+		window.location.href = "/SmartCable/admin/paymentDef/edit?boId="+id;
 }
 </script>
 </head>
 <body style="">
-<s:form action="/SpringMavenFinal/admin/paymentDef/add" modelAttribute="paymentDefDTO">
+<s:form action="/SmartCable/admin/paymentDef/add" modelAttribute="paymentDefDTO">
 <s:hidden path="id"/>
 <h1>Monthly Defintion</h1>
 <table width="100%">
